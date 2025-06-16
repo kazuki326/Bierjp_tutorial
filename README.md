@@ -101,6 +101,11 @@ VS Code を使う場合は [Live Server](https://marketplace.visualstudio.com/it
 
 `YOURNAME` にはあなたの GitHub ユーザー名を入れてください。これでブラウザからも完成したページを確認できるようになります。
 
+
+
+![image](https://github.com/user-attachments/assets/14b10788-a413-45a2-a0ac-ebda381c7983)
+
+
 ---
 
 このチュートリアルでは、基本的な HTML/CSS/JavaScript の構造と、ローカルおよび GitHub 上でのプレビュー方法を学びました。まずはコードを手で入力してみて、動作を確かめることから始めましょう。
