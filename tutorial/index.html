@@ -7,12 +7,23 @@
 </head>
 <body>
   <h1>おすすめのビール</h1>
-  <p id="intro">ビールの情報はボタンをクリックして表示します。</p>
-  <button id="showInfo">ビール情報を表示</button>
-  <div id="beer-info" style="display:none;">
-    <h2>ベルギービール</h2>
-    <p>香り高く深い味わいが特徴です。</p>
+
+  <div class="beer-card">
+    <img
+      class="beer-image"
+      src="https://bier.jp/images/beeroriginal/nx-002.jpg"
+      alt="ヴァイエンシュテファン ヘフェヴァイスビア"
+    />
+    <div id="beer-info" class="beer-details">
+      <h2>Weihenstephaner Hefe Weißbier (500 ml)</h2>
+      <p>【※バラ売り】ヴァイエンシュテファン ヘフェヴァイスビア [500 ml]</p>
+      <p>
+        バナナとクローブのフルーティーさとモルトの風味が融合し、軽やかでクリーミーな一杯に仕上がっています。その自然な濁りと淡い琥珀色は視覚からも楽しむことができます。豊かな白い泡が立ち上る際に放つ魅力的な香りが特徴です。
+      </p>
+    </div>
+    <button id="showInfo" class="info-button">詳細を見る</button>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
