@@ -108,6 +108,9 @@ VS Code を使う場合は [Live Server](https://marketplace.visualstudio.com/it
 
 
 ![image](https://github.com/user-attachments/assets/14b10788-a413-45a2-a0ac-ebda381c7983)
+
+
+
 このようなエラーが出た時は以下を設定。ターミナルに送信します
 ```
 # ユーザー名
