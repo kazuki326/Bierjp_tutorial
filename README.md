@@ -11,7 +11,7 @@
 - VS Code で HTML/CSS/JS を表示＆動作確認できる（Live Server など）  
 - コードを独自ファイル名で修正・保存できる  
 - 変更をコミットし、GitHub にプッシュできる  
-- プルリクエストを作成し、レビュー依頼ができる  
+- プルリクエストを作成し、**レビュー依頼**ができる  
 
 ---
 
@@ -20,7 +20,6 @@
 - **Git** インストール済み  
 - **VS Code** インストール済み  
   - 推奨拡張機能：`Live Server`（または Microsoft 製 `Live Preview`）  
-- （任意）**Python 3** か **Node.js**：簡易HTTPサーバ起動用  
 - **GitHub アカウント**
 
 > ユーザー名・メール未設定時は：
@@ -28,69 +27,43 @@
 > git config --global user.name "Your Name"
 > git config --global user.email "you@example.com"
 > ```
+>をターミナルに打ち込む
 
 ---
 
 ## 2. リポジトリをクローンする
 
 ```
-# 1) 任意の作業ディレクトリへ移動
-cd ~/work   # 例
-
-# 2) リポジトリをクローン
-git clone https://github.com/YOUR_ORG/Bierjp_tutorial.git
-cd Bierjp_tutorial
-```
-
-> `YOUR_ORG` や URL は実際のものに置き換えてください。
-
----
-
-## 3. VS Code で開く
-
-### コマンドで開く
-```
-code .
-```
-
-### GUI で開く
 1. VS Code を起動  
-2. 「ファイル」→「フォルダーを開く」で `Bierjp_tutorial` を選択
+
+2. 「ファイル」→「フォルダーを開く」で任意の作業ディレクトリへ移動（好きなフォルダを作成してそこからコマンドを打ちます）
+
+3. リポジトリをクローン
+git clone https://github.com/kazuki326/Bierjp_tutorial.git
+
+これでリモートからフォルダがDLされます。（Bierjp_tutorialフォルダ）
+```
+
 
 ---
 
-## 4. ローカルでページを表示する
+## 3. ローカルでページを表示する
 
 対象：`tutorial/` フォルダ内の `sample.html`, `sample.css`, `sample.js`
 
-### 4-1. Live Server（推奨）
+### 3-1. Live Server（推奨）
 1. `sample.html` を開く  
 2. 右下の **“Go Live”** をクリック  
    - ない場合：右クリック→「Open with Live Server」や `Ctrl+Shift+P` → “Live Server: Open with Live Server”  
 3. 保存すると自動リロードされます
 
-### 4-2. 簡易HTTPサーバで開く
-
-**Python 3:**
-```
-cd tutorial
-python -m http.server 8000
-# → http://localhost:8000/sample.html
-```
-
-**Node.js (http-server):**
-```
-cd tutorial
-npx http-server .
-# → http://localhost:8080/sample.html など
-```
-
-### 4-3. 直接ブラウザで開く
-`sample.html` をダブルクリックでも閲覧可。ただし `fetch()` など一部機能が制限されるため、基本はサーバ方式推奨。
+### 3-2. 直接ブラウザで開く
+https://codepen.io/
+というWebサイトにHTML, CSS, JavaScriptを打ち込むと作成したページを可視化できる！
 
 ---
 
-## 5. コードを読んでみよう
+## 4. コードを読んでみよう
 
 - **sample.html**：ページ構造（HTML）  
 - **sample.css**：見た目（CSS）  
@@ -104,7 +77,7 @@ npx http-server .
 
 ---
 
-## 6. 課題（Hands-on）
+## 5. 課題（Hands-on）
 
 1. **クローンしてローカルで動作確認**（手順 2〜4）  
 2. **独自ファイル名でコピー**  
@@ -116,40 +89,27 @@ npx http-server .
 
 ---
 
-## 7. ブランチを切って変更をコミットする
+## 6. ブランチを切って変更をコミットする
 
-### 7-1. ブランチ作成
+### 6-1. ブランチ作成
 ```
 git checkout -b feature/your-name-update
 ```
 
-### 7-2. ファイル作成・編集
-```
-cp tutorial/sample.html tutorial/yourname.html
-cp tutorial/sample.css  tutorial/yourname.css
-cp tutorial/sample.js   tutorial/yourname.js
-# 中身を編集
-```
-
-### 7-3. 変更確認
-```
-git status
-```
-
-### 7-4. ステージング & コミット
+### 6-2. ステージング & コミット
 ```
 git add tutorial/yourname.*
 git commit -m "Add my customized beer page (yourname.*)"
 ```
 
-### 7-5. リモートへプッシュ
+### 6-3. リモートへプッシュ
 ```
 git push -u origin feature/your-name-update
 ```
 
 ---
 
-## 8. プルリクエスト（PR）を作成する
+## 7. プルリクエスト（PR）を作成する
 
 1. GitHub のリポジトリページへ  
 2. 「Compare & pull request」ボタン（または Pull requests タブ→New pull request）  
@@ -164,7 +124,7 @@ git push -u origin feature/your-name-update
 
 ---
 
-## 9. Git / GitHub 便利コマンド集
+## 8. Git / GitHub 便利コマンド集
 
 ```
 # 変更点の確認
@@ -185,7 +145,7 @@ git fetch --all --prune
 
 ---
 
-## 10. よくあるトラブルと対処
+## 9. よくあるトラブルと対処
 
 | 症状 | 原因 / 対処 |
 |------|--------------|
