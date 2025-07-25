@@ -53,8 +53,18 @@ git clone https://github.com/kazuki326/Bierjp_tutorial.git
 
 ### 3-1. Live Server（推奨）
 1. `sample.html` を開く  
-2. 右下の **“Go Live”** をクリック  
-   - ない場合：右クリック→「Open with Live Server」や `Ctrl+Shift+P` → “Live Server: Open with Live Server”  
+2. 右上の **“プレビューの表示”** をクリック  
+   - ない場合：右クリック→「Open with Live Server」や `Ctrl+Shift+P` → “Live Server: Open with Live Server”
+  <img width="44" height="37" alt="image" src="https://github.com/user-attachments/assets/fa730fab-40ce-40bf-bb82-7e995864fd36" />
+  こんな感じのアイコン。
+
+---
+
+<img width="1919" height="1126" alt="image" src="https://github.com/user-attachments/assets/30223144-7915-4ac7-8e49-8375a1611310" />
+
+このように、右側にWebページが表示されます。
+
+
 3. 保存すると自動リロードされます
 
 ### 3-2. 直接ブラウザで開く
