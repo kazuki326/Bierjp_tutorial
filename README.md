@@ -1,185 +1,198 @@
 # Bierjp Tutorial
 
-ヒューメイアにようこそ！ このリポジトリは、新人向けに **Web の基礎** を学ぶチュートリアルとして用意されています。HTML・CSS・JavaScript を用いて、シンプルなビール紹介ページを作りながら Git/GitHub の基本操作も体験しましょう。
+ヒューメイアへようこそ！このリポジトリは、新人向けに **Web の基礎（HTML / CSS / JavaScript）** と **Git / GitHub の基本操作** を体験しながら学ぶためのチュートリアルです。  
+既存コード（`tutorial/` 配下の `sample.html`, `sample.css`, `sample.js`）をローカルで動かし、編集し、GitHub へプッシュし、**プルリクエスト（PR）を作成する** ところまでをゴールにします。
 
 ---
 
-## 1. ファイルを準備する
+## 0. ゴール（このチュートリアルでできること）
 
-1. リポジトリをクローン（または ZIP ダウンロード）
-
-   ```bash
-   git clone https://github.com/yourname/Bierjp_tutorial.git
-   cd Bierjp_tutorial
-   ```
-
-2. VS Code でフォルダを開く
-
-   ```bash
-   code .
-   ```
-
-   *VS Code コマンドが未設定なら、アプリから手動でフォルダを開いてください。*
-
-3. `tutorial` フォルダを作り、次の 3 ファイルを用意します。
-
-   ```text
-   tutorial/
-   ├─ index.html
-   ├─ styles.css
-   └─ script.js
-   ```
+- Git でリポジトリをクローンできる  
+- VS Code で HTML/CSS/JS を表示＆動作確認できる（Live Server など）  
+- コードを独自ファイル名で修正・保存できる  
+- 変更をコミットし、GitHub にプッシュできる  
+- プルリクエストを作成し、レビュー依頼ができる  
 
 ---
 
-## 2. HTML を書く
+## 1. 事前準備（Prerequisites）
 
-`index.html` に以下を貼り付けて保存します。
+- **Git** インストール済み  
+- **VS Code** インストール済み  
+  - 推奨拡張機能：`Live Server`（または Microsoft 製 `Live Preview`）  
+- （任意）**Python 3** か **Node.js**：簡易HTTPサーバ起動用  
+- **GitHub アカウント**
 
-```html
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>ビール紹介</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>おすすめのビール</h1>
+> ユーザー名・メール未設定時は：
+> ```
+> git config --global user.name "Your Name"
+> git config --global user.email "you@example.com"
+> ```
 
-  <div class="beer-card">
-    <img
-      class="beer-image"
-      src="https://bier.jp/images/beeroriginal/nx-002.jpg"
-      alt="ヴァイエンシュテファン ヘフェヴァイスビア"
-    />
-    <div id="beer-info" class="beer-details">
-      <h2>Weihenstephaner Hefe Weißbier (500 ml)</h2>
-      <p>【※バラ売り】ヴァイエンシュテファン ヘフェヴァイスビア [500 ml]</p>
-      <p>バナナとクローブのフルーティーさとモルトの風味が融合し、軽やかでクリーミーな一杯に仕上がっています。その自然な濁りと淡い琥珀色は、視覚からも楽しむことができます。豊かな白い泡が立ち上る際に放つ魅力的な香りが特徴です。</p>
-    </div>
-    <button id="showInfo" class="info-button">詳細を見る</button>
-  </div>
+---
 
-  <script src="script.js"></script>
-</body>
-</html>
+## 2. リポジトリをクローンする
+
+```
+# 1) 任意の作業ディレクトリへ移動
+cd ~/work   # 例
+
+# 2) リポジトリをクローン
+git clone https://github.com/YOUR_ORG/Bierjp_tutorial.git
+cd Bierjp_tutorial
+```
+
+> `YOUR_ORG` や URL は実際のものに置き換えてください。
+
+---
+
+## 3. VS Code で開く
+
+### コマンドで開く
+```
+code .
+```
+
+### GUI で開く
+1. VS Code を起動  
+2. 「ファイル」→「フォルダーを開く」で `Bierjp_tutorial` を選択
+
+---
+
+## 4. ローカルでページを表示する
+
+対象：`tutorial/` フォルダ内の `sample.html`, `sample.css`, `sample.js`
+
+### 4-1. Live Server（推奨）
+1. `sample.html` を開く  
+2. 右下の **“Go Live”** をクリック  
+   - ない場合：右クリック→「Open with Live Server」や `Ctrl+Shift+P` → “Live Server: Open with Live Server”  
+3. 保存すると自動リロードされます
+
+### 4-2. 簡易HTTPサーバで開く
+
+**Python 3:**
+```
+cd tutorial
+python -m http.server 8000
+# → http://localhost:8000/sample.html
+```
+
+**Node.js (http-server):**
+```
+cd tutorial
+npx http-server .
+# → http://localhost:8080/sample.html など
+```
+
+### 4-3. 直接ブラウザで開く
+`sample.html` をダブルクリックでも閲覧可。ただし `fetch()` など一部機能が制限されるため、基本はサーバ方式推奨。
+
+---
+
+## 5. コードを読んでみよう
+
+- **sample.html**：ページ構造（HTML）  
+- **sample.css**：見た目（CSS）  
+- **sample.js** ：動作（JavaScript）
+
+**簡単な改造例**：
+- タイトル文言変更  
+- 画像サイズや角丸・中央寄せ調整  
+- 詳細テキストの追加・変更  
+- 複数ビールカードを並べる など
+
+---
+
+## 6. 課題（Hands-on）
+
+1. **クローンしてローカルで動作確認**（手順 2〜4）  
+2. **独自ファイル名でコピー**  
+   - 例：`yourname.html`, `yourname.css`, `yourname.js`  
+3. **コードを少し改造**  
+   - 例：画像を中央＆小さめに、ボタン色変更、アニメーション追加…  
+4. **Git でブランチを切り、コミット & プッシュ**  
+5. **GitHub でプルリクエスト作成**  
+
+---
+
+## 7. ブランチを切って変更をコミットする
+
+### 7-1. ブランチ作成
+```
+git checkout -b feature/your-name-update
+```
+
+### 7-2. ファイル作成・編集
+```
+cp tutorial/sample.html tutorial/yourname.html
+cp tutorial/sample.css  tutorial/yourname.css
+cp tutorial/sample.js   tutorial/yourname.js
+# 中身を編集
+```
+
+### 7-3. 変更確認
+```
+git status
+```
+
+### 7-4. ステージング & コミット
+```
+git add tutorial/yourname.*
+git commit -m "Add my customized beer page (yourname.*)"
+```
+
+### 7-5. リモートへプッシュ
+```
+git push -u origin feature/your-name-update
 ```
 
 ---
 
-## 3. CSS を書く
+## 8. プルリクエスト（PR）を作成する
 
-`styles.css` に以下を記述します。
+1. GitHub のリポジトリページへ  
+2. 「Compare & pull request」ボタン（または Pull requests タブ→New pull request）  
+3. **Base**: `main` / **Compare**: `feature/your-name-update` を指定  
+4. タイトル・説明（変更内容/意図/確認方法）を書いて **Create pull request**  
+5. レビュワーを指定（Assignees / Reviewers / Labels など）
 
-```css
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  padding: 40px 20px;
-  background: #f4f4f4;
-  color: #333;
-}
+**PR の書き方ヒント**  
+- 変更点（Before / After）  
+- 動作確認手順（どのURL/ファイルを開けば良いか）  
+- スクショ or GIF で視覚的に説明  
 
-h1 {
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 30px;
-}
+---
 
-.beer-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
+## 9. Git / GitHub 便利コマンド集
 
-.beer-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+```
+# 変更点の確認
+git diff
 
-.beer-details {
-  display: none;          /* デフォルトで非表示 */
-  text-align: left;
-  margin-top: 15px;
-  line-height: 1.6;
-  border-top: 1px solid #e0e0e0;
-  padding-top: 10px;
-}
+# 直近のコミット履歴
+git log --oneline --graph --decorate --all
 
-.info-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #2c3e50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+# 直前のコミットを修正（メッセージ含む）
+git commit --amend
 
-.info-button:hover {
-  background: #1a242f;
-}
+# 直前の push を修正した場合（慎重に）
+git push --force-with-lease
+
+# リモート更新の取得・不要ブランチ掃除
+git fetch --all --prune
 ```
 
 ---
 
-## 4. JavaScript を書く
+## 10. よくあるトラブルと対処
 
-`script.js` に以下を保存します。
-
-```javascript
-// 詳細表示ボタンで情報の表示・非表示を切り替える
-
-document.getElementById("showInfo").addEventListener("click", () => {
-  const info = document.getElementById("beer-info");
-  info.style.display = info.style.display === "none" || info.style.display === "" ? "block" : "none";
-});
-```
+| 症状 | 原因 / 対処 |
+|------|--------------|
+| `fatal: repository not found` | URL ミス / 権限不足。URL・権限を確認。 |
+| `error: File xxx is 241.34 MB` | GitHub は 100MB 超ファイル拒否。動画等は `.gitignore`、もしくは Git LFS 検討。 |
+| `Go Live が出ない` | Live Server 未導入 / HTML を開いていない。コマンドパレットからも実行可。 |
+| 日本語文字化け | `<meta charset="UTF-8">` と VS Code の保存エンコーディングを確認。 |
+| `git config` エラー | 権限問題。管理者権限や `.gitconfig` の書込権限を確認。 |
 
 ---
-
-## 5. ローカルでプレビューしてみよう
-
-ターミナルで `tutorial` フォルダを開き、簡易サーバーを起動します。
-
-```bash
-python3 -m http.server
-```
-
-ブラウザで `http://localhost:8000` を開くと、ページを確認できます。
-
-> **VS Code ユーザー向け**：拡張機能 [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) を使うと、保存と同時にブラウザがリロードされ便利です。
-
----
-
-## 6. GitHub 上でプレビューする
-
-1. GitHub リポジトリの **Settings → Pages** で **Source** を `main` ブランチに設定し、`/` ルートを選択。
-2. 数分後、`https://YOURNAME.github.io/Bierjp_tutorial/tutorial/` で公開ページを閲覧できます。
-
-`YOURNAME` をあなたの GitHub ユーザー名に置き換えてください。
-
----
-
-## 7. Git 設定エラーが出たら
-
-Git でコミット時にユーザー名／メール未設定エラーが表示された場合は、以下をターミナルで実行して再度コミットしてください。
-
-```bash
-# ユーザー名
-git config --global user.name "male"
-
-# メールアドレス
-git config --global user.email "male@example.com"
-```
-
-![Git config error screenshot](https://github.com/user-attachments/assets/14b10788-a413-45a2-a0ac-ebda381c7983)
-
----
-
-このチュートリアルでは、**HTML/CSS/JavaScript の基本構造** と **ローカル・GitHub 上でのプレビュー手順**、さらに **Git の基本設定** を学びました。まずは実際にコードを入力し、挙動を確かめてみましょう！

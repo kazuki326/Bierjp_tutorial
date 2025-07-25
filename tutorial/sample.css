@@ -1,0 +1,126 @@
+:root {
+  --bg: #f5f6f8;
+  --fg: #333;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --accent: #2c3e50;
+  --radius: 18px;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --font: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--fg);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.page-title {
+  text-align: center;
+  margin: 0 0 40px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+}
+
+/* Card */
+.beer-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 28px 32px;
+  max-width: 560px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+}
+
+.thumb-wrap {
+  display: flex;
+  justify-content: center; /* 横方向中央 */
+}
+
+.beer-image {
+  width: 100%;
+  max-width: 220px;       /* ■ 画像サイズを小さく */
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 6px);
+  margin-inline: auto;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease;
+}
+.beer-image:hover {
+  transform: scale(1.03);
+}
+
+.beer-summary {
+  text-align: center;
+}
+
+.beer-name {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+
+.beer-short {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* detailsエリア：トグルで高さアニメーション */
+.beer-details {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform-origin: top;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+  line-height: 1.7;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 0; /* 開閉時に余白を付けたいならJSでクラス制御でもOK */
+}
+
+.beer-details.is-open {
+  max-height: 500px; /* 十分に大きい値 */
+  opacity: 1;
+  padding-top: 14px;
+}
+
+/* ボタン */
+.info-button {
+  justify-self: center;
+  cursor: pointer;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 9999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: opacity 0.25s ease, transform 0.15s ease;
+}
+.info-button:hover {
+  opacity: 0.9;
+}
+.info-button:active {
+  transform: scale(0.98);
+}
