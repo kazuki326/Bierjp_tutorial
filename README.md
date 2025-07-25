@@ -1,7 +1,7 @@
 # Bierjp Tutorial
 
 ヒューメイアへようこそ！このリポジトリは、新人向けに **Web の基礎（HTML / CSS / JavaScript）** と **Git / GitHub の基本操作** を体験しながら学ぶためのチュートリアルです。  
-既存コード（`tutorial/` 配下の `sample.html`, `sample.css`, `sample.js`）をローカルで動かし、編集し、GitHub へプッシュし、**プルリクエスト（PR）を作成する** ところまでをゴールにします。
+既存コード（`tutorial/` 配下の `sample.html`）をローカルで動かし、編集し、GitHub へプッシュし、**プルリクエスト（PR）を作成する** ところまでをゴールにします。
 
 ---
 
@@ -49,7 +49,7 @@ git clone https://github.com/kazuki326/Bierjp_tutorial.git
 
 ## 3. ローカルでページを表示する
 
-対象：`tutorial/` フォルダ内の `sample.html`, `sample.css`, `sample.js`
+対象：`tutorial/` フォルダ内の `sample.html`
 
 ### 3-1. Live Server（推奨）
 1. `sample.html` を開く  
@@ -65,11 +65,17 @@ https://codepen.io/
 
 ## 4. コードを読んでみよう
 
-- **sample.html**：ページ構造（HTML）  
-- **sample.css**：見た目（CSS）  
-- **sample.js** ：動作（JavaScript）
+**sample.html**
+htmlファイルにすべてまとめていますが、各ファイルに分けることもできます。
 
-**簡単な改造例**：
+>例
+>- **sample.html**：ページ構造（HTML）  
+>- **sample.css**：見た目（CSS）  
+>- **sample.js** ：動作（JavaScript）
+
+### 4-1. 元のコードから自分なりに中身を修正してみましょう。
+
+**簡単な修正例**：
 - タイトル文言変更  
 - 画像サイズや角丸・中央寄せ調整  
 - 詳細テキストの追加・変更  
@@ -81,7 +87,7 @@ https://codepen.io/
 
 1. **クローンしてローカルで動作確認**（手順 2〜4）  
 2. **独自ファイル名でコピー**  
-   - 例：`yourname.html`, `yourname.css`, `yourname.js`  
+   - 例：`yourname.html`
 3. **コードを少し改造**  
    - 例：画像を中央＆小さめに、ボタン色変更、アニメーション追加…  
 4. **Git でブランチを切り、コミット & プッシュ**  
