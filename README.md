@@ -1,7 +1,7 @@
 # Bierjp Tutorial
 
 ヒューメイアへようこそ！このリポジトリは、新人向けに **Web の基礎（HTML / CSS / JavaScript）** と **Git / GitHub の基本操作** を体験しながら学ぶためのチュートリアルです。  
-既存コード（`tutorial/` 配下の `sample.html`）をローカルで動かし、編集し、GitHub へプッシュし、**プルリクエスト（PR）を作成する** ところまでをゴールにします。
+既存コード（`tutorial/` 配下の `index.html`）をローカルで動かし、編集し、GitHub へプッシュし、**プルリクエスト（PR）を作成する** ところまでをゴールにします。
 
 ---
 
@@ -49,10 +49,10 @@ git clone https://github.com/kazuki326/Bierjp_tutorial.git
 
 ## 3. ローカルでページを表示する
 
-対象：`tutorial/` フォルダ内の `sample.html`
+対象：`tutorial/` フォルダ内の `index.html`
 
 ### 3-1. Live Server（推奨）
-1. `sample.html` を開く  
+1. `index.html` を開く  
 2. 右上の **“プレビューの表示”** をクリック  
    - ない場合：右クリック→「Open with Live Server」や `Ctrl+Shift+P` → “Live Server: Open with Live Server”
   <img width="44" height="37" alt="image" src="https://github.com/user-attachments/assets/fa730fab-40ce-40bf-bb82-7e995864fd36" />
@@ -75,7 +75,7 @@ https://codepen.io/
 
 ## 4. コードを読んでみよう
 
-**sample.html**
+**index.html**
 htmlファイルにすべてまとめていますが、各ファイルに分けることもできます。
 
 >例
