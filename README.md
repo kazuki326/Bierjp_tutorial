@@ -106,23 +106,29 @@ https://codepen.io/
 ---
 
 ## 5-4. ブランチを切って変更をコミットする
+index.htmlをコピーして名前を変更してみましょう。
+それをpushする手順を紹介します。
 
 ### 5-4-1. ブランチ作成
 ```
 git checkout -b feature/your-name-update
 ```
+GitGraphから右クリックでもできます！
+<img width="912" height="863" alt="image" src="https://github.com/user-attachments/assets/818711ef-f63e-4d4d-bead-c1df86b65ed4" />
 
 ### 5-4-2. ステージング & コミット
 ```
 git add tutorial/yourname.*
 git commit -m "Add my customized beer page (yourname.*)"
 ```
+「＋」ボタンを押すと変更をステージングできます！（リモートにプッシュするファイルを選択）
+<img width="305" height="232" alt="image" src="https://github.com/user-attachments/assets/3af1646e-b7e3-49c5-a287-6f8923775712" />
 
 ### 5-4-3. リモートへプッシュ
 ```
 git push -u origin feature/your-name-update
 ```
-
+「コミット」ボタンを押すとそれでもいけます！
 ---
 
 ## 7. プルリクエスト（PR）を作成する
