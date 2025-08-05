@@ -139,10 +139,12 @@ git push -u origin feature/your-name-update
 4. タイトル・説明（変更内容/意図/確認方法）を書いて **Create pull request**  
 5. レビュワーを指定（Assignees / Reviewers / Labels など）
 
-**PR の書き方ヒント**  
-- 変更点（Before / After）  
-- 動作確認手順（どのURL/ファイルを開けば良いか）  
-- スクショ or GIF で視覚的に説明  
+<img width="969" height="139" alt="image" src="https://github.com/user-attachments/assets/d5c04680-2a8e-4d89-ab5d-d7eeada942e7" />
+
+自分のブランチを作ってPushしたらWebの方にボタンが現れます。
+<img width="1041" height="739" alt="image" src="https://github.com/user-attachments/assets/1eec7b5d-ef6d-4789-85d4-a5e921568b5e" />
+
+そのまま進んでプルリクエストを作れます！！
 
 ---
 
