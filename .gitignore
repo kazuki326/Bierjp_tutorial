@@ -1,0 +1,25 @@
+# Gitで「バージョン管理したくないファイル・フォルダ」を指定するためのファイル
+
+# OSごとの不要ファイル
+.DS_Store
+Thumbs.db
+
+# エディタ関連
+.vscode/
+.idea/
+
+# ビルド成果物
+dist/
+build/
+
+# 環境変数や秘密情報
+.env
+.env.local
+.env.*.local
+
+# その他
+*.log
+
+# SASS, Lessなどの一時ファイル
+.sass-cache/
+.cache/
